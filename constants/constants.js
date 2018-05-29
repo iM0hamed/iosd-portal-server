@@ -4,6 +4,7 @@ const constants = {
 
   //authentication
    AUTHENTICATION_FAILED: 'Failed to authenticate user',
+   NOT_ADMIN: 'You are not authorized to see this',
    NOT_TOKEN: 'No Token Provided',
 
   //user

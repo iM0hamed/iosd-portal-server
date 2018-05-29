@@ -8,7 +8,8 @@ let userController = {
         name: req.body.name,
         username: req.body.username,
         password: req.body.password,
-        email: req.body.email
+        email: req.body.email,
+        isAdmin: req.body.isAdmin
       });
 
       let token = new Token(user).getToken();
@@ -49,6 +50,6 @@ let userController = {
         }
       });
     }
-};
+}; 
 
 export default userController;
