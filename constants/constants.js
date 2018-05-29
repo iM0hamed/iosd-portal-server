@@ -9,7 +9,7 @@ const constants = {
 
   //user
    CREATED_USER: 'User has been created!',
-   LOGIN_SUCCESS: 'Successfuly login!',
+   LOGIN_SUCCESS: 'Successful login!',
    USER_NOT_EXITS: 'User doesn´t exist',
    INVALID_PASS: 'Invalid Password.'
 }

@@ -2,14 +2,13 @@ import User from '../models/user';
 import Token from '../common/token';
 import constants from '../constants/constants';
 
-let userController = {
+let authController = {
     signup: (req, res) => {
       let user = new User({
         name: req.body.name,
         username: req.body.username,
         password: req.body.password,
-        email: req.body.email,
-        isAdmin: req.body.isAdmin
+        email: req.body.email
       });
 
       let token = new Token(user).getToken();
@@ -29,7 +28,7 @@ let userController = {
     login: (req, res) => {
       User.findOne({
         username: req.body.username
-      }).select('name username password').exec((err, user) => {
+      }).select('name username password isAdmin').exec((err, user) => {
         if(err) {
           throw err;
         }
@@ -52,4 +51,4 @@ let userController = {
     }
 }; 
 
-export default userController;
+export default authController;

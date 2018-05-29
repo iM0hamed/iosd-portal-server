@@ -4,7 +4,7 @@ import constants from '../constants/constants';
 
 export default (req, res, next) => {
 
-  let token = req.body.token || req.param('token') || req.headers['x-access-token'];
+  let token = req.body.token || req.param('token') || req.headers['authorization'];
 
   if(token) {
     jsonwebtoken.verify(token, config.secretKey, (err, decoded) => {
