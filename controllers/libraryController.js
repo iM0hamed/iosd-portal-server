@@ -11,7 +11,11 @@ let libraryController = {
                     category.push(book.category);
                 }
             });
-            res.send({category, data});
+            res.send({
+                success: true,
+                category,
+                books : data
+            });
         }, (err) => {
             console.log("Some error occured");
             res.send(err)
@@ -20,7 +24,10 @@ let libraryController = {
 
     show: (req, res) => {
         Book.findById(req.params.id).then(book => {
-            res.send(book);
+            res.send({
+                success: true,
+                book: book
+            });
         }, (err) => {
             res.status(404).json({success: false, message: "book not found"});
         });
