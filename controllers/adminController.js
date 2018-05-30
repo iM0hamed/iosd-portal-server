@@ -12,7 +12,7 @@ let adminController = {
 				message: "Book updated",
 				data: data
 			});
-		}).catch(e => {
+		}, (err) => {
 			res.status(404).send({
 				success: false,
 				message: "Book not found"
