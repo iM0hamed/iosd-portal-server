@@ -6,10 +6,12 @@ import authenticate from '../middlewares/authenticate';
 import libraryRoutes from './library';
 import authRoutes from './auth' ;
 import blogRoutes from './blog' ;
+import eventRoutes from './event';
 
 router.use("/auth", authRoutes);
 router.use("/blog", authenticate, blogRoutes );
 router.use("/library", authenticate, libraryRoutes);
+router.use("/events", authenticate, eventRoutes);
 
 router.use("*" , (req, res) => {
     res.status(404).send({
@@ -25,8 +27,5 @@ router.use(function (err, req, res, next) {
         message : "Internal App Error"
     })
 })
-//admin routes
-// router.use("/admin", [authenticate, admin], adminRoutes);
-
 
 export default router;
