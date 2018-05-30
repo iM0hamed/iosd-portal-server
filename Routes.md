@@ -12,9 +12,9 @@ Prefix - /api/v1/
     - POST /auth/signup (admin)
 
 - Blog 
-    - GET /blog//posts/
+    - GET /blog/posts/
     - GET /blog/post/:guid
-    - GET /blog/refresh (admin)
+    - POST /blog/refresh (admin)
 
 - Library
     - GET /library/books/ 
