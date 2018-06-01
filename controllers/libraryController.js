@@ -24,12 +24,19 @@ let libraryController = {
 
     show: (req, res) => {
         Book.findById(req.params.id).then(book => {
-            res.send({
-                success: true,
-                book: book
+            if(book) {
+                res.send({
+                    success: true,
+                    book: book
+                });   
+            } else {
+                return Promise.reject();
+            }
+        }).catch((err) => {
+            res.status(404).json({
+                success: false,
+                message: "book not found"
             });
-        }, (err) => {
-            res.status(404).json({success: false, message: "book not found"});
         });
     },
 
@@ -59,11 +66,15 @@ let libraryController = {
                 new: true
             }
         ).then(data => {
-            res.send({
-                success: true,
-                message: "Book updated",
-                data: data
-            });
+            if (data) {
+                res.send({
+                    success: true,
+                    message: "Book updated",
+                    data: data
+                });    
+            } else {
+                return Promise.reject();   
+            }
         }).catch(e => {
             res.status(404).send({
                 success: false,
