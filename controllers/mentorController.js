@@ -1,12 +1,13 @@
 import express from 'express';
-import Event from './../models/event';
+import Mentor from './../models/mentor';
 
-let eventController = {
-	index: (req, res) => {
-		Event.find().then( data => {
+let mentorController = {
+	
+    all: (req, res) => {
+		Mentor.find().then( data => {
 			res.json({
 				success: true,
-				message: "All events found",
+				message: "All mentors found",
 				data: data
 			});
 		}, (err) => {
@@ -14,39 +15,43 @@ let eventController = {
 		});
 	},
 
-	recent: (req, res) => {
-        const now = new Date();
-        Event.find({start: {$gte: now}}).sort('start').limit(5).then(data => {
-            res.json({
-                success: true,
-                message: "Events found",
-                data: data
+    show: (req, res) => {
+        Mentor.findById(req.params.id).then(data => {
+            if(data) {
+                res.send({
+                    success: true,
+                    data: data
+                });    
+            } else {
+                return Promise.reject();
+            }
+        }).catch((err) => {
+            res.status(404).json({
+                success: false,
+                message: "mentor not found"
             });
-        }, (err) => {
-            res.send("Some error occured");
         });
-          
     },
 
 	new: (req, res) => {
-		let event = new Event(req.body);
-		event.save().then(data => {
+		let mentor = new Mentor(req.body);
+		mentor.save().then(data => {
             res.json({
                 success: true,
-                message: "Event Created",
+                message: "Mentor Created",
                 data: data
             });
 		}, (err) => {
 			console.err(err);
             res.status(404).json({
                 success: false,
-                message: "event not Created"
+                message: "mentor not created"
             });
 		});
 	},
 
 	edit: (req, res) => {
-		Event.findOneAndUpdate({
+		Mentor.findOneAndUpdate({
             _id: req.params.id
             }, req.body, {
                 new: true
@@ -55,36 +60,36 @@ let eventController = {
             if(data) {
                 res.send({
                     success: true,
-                    message: "Event updated",
+                    message: "mentor updated",
                     data: data
-                });   
+                });    
             } else {
-                return Promise.reject();
+                return Promise.reject();   
             }
         }).catch((err) => {
             res.status(404).send({
                 success: false,
-                message: "Event not found"
+                message: "mentor not found"
             });
         });
 	},
 
 	delete: (req, res) => {
-		Event.remove({
+		Mentor.remove({
             _id: req.params.id
         }).then(data => {
             res.json({
                 success: true,
-                message: "Event deleted",
+                message: "Mentor deleted",
                 data: data
             });
         }, (err) => {
             res.status(404).json({
                 success: false,
-                message: "Event not found"
+                message: "Mentor not found"
             });
         });
 	}
 };
 
-export default eventController;
+export default mentorController;
