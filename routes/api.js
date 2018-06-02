@@ -8,12 +8,14 @@ import authRoutes from './auth' ;
 import blogRoutes from './blog' ;
 import eventRoutes from './event';
 import mentorRoutes from './mentor';
+import projectRoutes from './project';
 
 router.use("/auth", authRoutes);
 router.use("/blog", authenticate, blogRoutes );
 router.use("/library", authenticate, libraryRoutes);
 router.use("/events", authenticate, eventRoutes);
 router.use("/", authenticate, mentorRoutes);
+router.use("/", authenticate, projectRoutes);
 
 router.use("*" , (req, res) => {
     res.status(404).send({
