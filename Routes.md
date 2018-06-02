@@ -34,5 +34,13 @@ Prefix - /api/v1/
     
     - DELETE /events/:id (admin)
 
+- Mentors
+    - GET /mentors/all
+    - GET /mentor/:id
+
+    - POST /mentor/new (admin)
+    - POST /mentor/:id (admin)
+
+    - DELETE /mentor/:id (admin)
     
 - Courses and Videos ( To be Decided Yet)
