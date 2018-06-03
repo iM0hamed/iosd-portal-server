@@ -23,7 +23,13 @@ const UserSchema = new mongoose.Schema({
     type: String,
     required: true,
     trim: true
-  }
+  },
+  image: String,
+  college: String,
+  membershipCard: String,
+  socials: {},
+  skills: [String]
+
 });
 
 UserSchema.pre('save', function(next) {
