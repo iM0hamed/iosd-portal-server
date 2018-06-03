@@ -42,5 +42,14 @@ Prefix - /api/v1/
     - POST /mentor/:id (admin)
 
     - DELETE /mentor/:id (admin)
+
+- Projects
+    - GET /projects/all
+    - GET /project/:id
+
+    - POST /project/new (admin)
+    - POST /project/:id (admin)
+
+    - DELETE /project/:id (admin)
     
 - Courses and Videos ( To be Decided Yet)
