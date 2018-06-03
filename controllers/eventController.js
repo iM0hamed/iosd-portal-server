@@ -29,6 +29,8 @@ let eventController = {
     },
 
 	new: (req, res) => {
+	    // expect data in second , convert to date obj
+	    req.body.date = new Date(req.body.date * 1000);
 		let event = new Event(req.body);
 		event.save().then(data => {
             res.json({
