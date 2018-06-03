@@ -51,5 +51,9 @@ Prefix - /api/v1/
     - POST /project/:id (admin)
 
     - DELETE /project/:id (admin)
+
+-Profile
+    - GET /profile/:id
+    - POST /profile/update
     
 - Courses and Videos ( To be Decided Yet)
