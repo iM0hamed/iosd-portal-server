@@ -10,7 +10,7 @@ export default class Token {
       username: user.username,
       isAdmin: user.isAdmin
     }, secretKey, {
-      expiresIn: 1440
+      expiresIn: 60 * 60 * 24 * 7
     });
   }
 
