@@ -31,6 +31,29 @@ let profileController = {
         });
     },
 
+    index: (req, res) => {
+
+        User.findById(req.decoded.id).then(data => {
+            console.log(data);
+            if(data) {
+                data = data.toJSON();
+                delete data.password ;
+                delete data.isAdmin ;
+                res.send({
+                    success: true,
+                    user: data
+                });
+            } else {
+                return Promise.reject();
+            }
+        }).catch((err) => {
+            res.status(404).json({
+                success: false,
+                message: "user not found"
+            });
+        });
+    },
+
 	edit: (req, res) => {
         let updatedUser = req.body;
         for (var x in updatedUser) {

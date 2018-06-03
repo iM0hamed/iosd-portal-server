@@ -27,7 +27,11 @@ const UserSchema = new mongoose.Schema({
   image: String,
   college: String,
   membershipCard: String,
-  socials: {},
+  socials: {
+      facebook : String,
+      linkedIn : String,
+      github : String
+  },
   skills: [String]
 
 });
