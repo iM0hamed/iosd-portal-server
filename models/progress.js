@@ -18,6 +18,6 @@ const ProgressSchema = new Schema({
 
     }
 
-})
+});
 
-mongoose.model('Progress' , ProgressSchema);
+module.exports = mongoose.model('Progress' , ProgressSchema);

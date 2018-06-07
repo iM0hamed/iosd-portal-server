@@ -12,7 +12,7 @@ import projectRoutes from './project';
 import profileRoutes from './profile';
 import courseRoutes from './course';
 import instructorRoutes from './instructor';
-// import progressRoutes from './progress';
+import progressRoutes from './progress';
 
 router.use("/auth", authRoutes);
 router.use("/blog", authenticate, blogRoutes );
@@ -23,7 +23,7 @@ router.use("/", authenticate, projectRoutes);
 router.use("/profile", authenticate, profileRoutes);
 router.use("/", authenticate, courseRoutes);
 router.use("/instructors", authenticate, instructorRoutes);
-// router.use("/progress/course", authenticate, progressRoutes);
+router.use("/progress/course", authenticate, progressRoutes);
 
 router.use("*" , (req, res) => {
     res.status(404).send({
