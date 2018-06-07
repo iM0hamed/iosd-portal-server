@@ -57,16 +57,17 @@ Prefix - /api/v1/
     - POST /profile/update
     
 - Courses and Videos
+    - GET /courses
     - GET /course/:id/
-    - POST /course/:id/  (Will not change videos...)
-    - POST /courses/new/ (Will Initialize Videos to Empty Array)
+    - POST /course/:id/  (Will not change videos...) (admin)
+    - POST /courses/new/ (Will Initialize Videos to Empty Array) (admin)
     
-    - POST /courses/:id/videos/  (Will Update Videos Upon Some Validation)
+    - POST /courses/:id/videos/  (Will Update Videos Upon Some Validation) (admin)
     
     - GET /progress/course/:id (Send Progress of Current User and CourseID)
     - POST /progress/course/:id/video/:vid/ (Mark the vid video as watched)
     
     - GET /instructors/:id
-    - POST /instructors/:id
-    - POST /instructors/new
+    - POST /instructors/:id (admin)
+    - POST /instructors/new (admin)
     
