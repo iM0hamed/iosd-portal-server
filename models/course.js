@@ -9,7 +9,7 @@ const CourseSchema = new Schema({
     // review: [Review],
 
     prerequisites: [{
-        req: String
+        type: String
     }],
 
     Instructor: [{
@@ -18,7 +18,7 @@ const CourseSchema = new Schema({
     }],
 
     videos: [{
-        id: Schema.Types.ObjectId(),
+        id: Schema.Types.ObjectId,
         title: String,
         url: String,
         section : String,
