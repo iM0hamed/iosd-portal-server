@@ -24,6 +24,13 @@ const CourseSchema = new Schema({
         section : String,
         duration: String
     }]
+} , {
+    toObject: {
+        virtuals: true
+    },
+    toJSON: {
+        virtuals: true
+    }
 });
 
 CourseSchema

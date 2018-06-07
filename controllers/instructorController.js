@@ -1,4 +1,3 @@
-import express from 'express';
 import Instructor from './../models/instructor';
 
 const instructorController = {

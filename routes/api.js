@@ -18,12 +18,13 @@ router.use("/auth", authRoutes);
 router.use("/blog", authenticate, blogRoutes );
 router.use("/library", authenticate, libraryRoutes);
 router.use("/events", authenticate, eventRoutes);
-router.use("/", authenticate, mentorRoutes);
-router.use("/", authenticate, projectRoutes);
 router.use("/profile", authenticate, profileRoutes);
-router.use("/", authenticate, courseRoutes);
 router.use("/instructors", authenticate, instructorRoutes);
 router.use("/progress/course", authenticate, progressRoutes);
+router.use("/", authenticate, courseRoutes);
+router.use("/", authenticate, mentorRoutes);
+router.use("/", authenticate, projectRoutes);
+
 
 router.use("*" , (req, res) => {
     res.status(404).send({

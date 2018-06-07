@@ -2,8 +2,9 @@ import mongoose , {Schema} from 'mongoose';
 
 const InstructorSchema = new Schema({
     name: String,
-    age: Date,
+    job : String,
     about: String,
+    image: String
     // reviews: [Review]
 });
 
