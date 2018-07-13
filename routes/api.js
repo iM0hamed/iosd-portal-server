@@ -13,8 +13,10 @@ import profileRoutes from './profile';
 import courseRoutes from './course';
 import instructorRoutes from './instructor';
 import progressRoutes from './progress';
+import uploadRoutes from './upload';
 
 router.use("/auth", authRoutes);
+router.use("/uploads", uploadRoutes);
 router.use("/blog", authenticate, blogRoutes );
 router.use("/library", authenticate, libraryRoutes);
 router.use("/events", authenticate, eventRoutes);
