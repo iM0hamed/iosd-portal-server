@@ -5,6 +5,7 @@ import Course from './../models/course';
 const progressController = {
 	
 	fetchProgress : (req, res) => {
+		console.log("1")
 		Progress.findOne({Course: req.params.id}).then(progress => {
 			if(progress) {
 				res.json({
@@ -25,7 +26,7 @@ const progressController = {
 
 	newProgress: (req, res) => {
 		const data = {
-			Course: req.body.Course,
+			Course: req.body.course,
 			User: req.decoded.id,
 			watched: {}	
 		}

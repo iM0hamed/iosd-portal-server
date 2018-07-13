@@ -4,9 +4,8 @@ import progressController from '../controllers/progressController';
 
 let router = express.Router();
 
+router.get("/:id/video/:vid", progressController.markVideo);
 router.get("/:id", progressController.fetchProgress);
-
 router.post("/new", progressController.newProgress);
-router.post("/:id/video/:vid", admin, progressController.markVideo);
 
 export default router;    

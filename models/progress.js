@@ -1,23 +1,25 @@
-import mongoose , {Schema} from 'mongoose';
+import mongoose, {Schema} from 'mongoose';
 
 const ProgressSchema = new Schema({
 
-    User : {
+    User: {
         type: Schema.Types.ObjectId,
         ref: 'User',
-    } ,
+    },
 
-    Course : {
+    Course: {
         type: Schema.Types.ObjectId,
         ref: 'Course',
-    } ,
+    },
 
-    watched : {
+    watched: {
         // watched[videoId] = true if video is watched
         // watched[videoId] = false or undefined if video is watched
+        type: Schema.Types.Mixed,
+        default: {}
 
     }
 
-});
+}, {minimize: false});
 
-module.exports = mongoose.model('Progress' , ProgressSchema);
+module.exports = mongoose.model('Progress', ProgressSchema);

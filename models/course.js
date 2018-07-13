@@ -22,7 +22,7 @@ const CourseSchema = new Schema({
         title: String,
         url: String,
         section : String,
-        duration: String
+        duration: Number
     }]
 } , {
     toObject: {
