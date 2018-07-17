@@ -1,5 +1,3 @@
-
-
 const uploadController = {
     upload: (req, res, next) => {
         res.json({
