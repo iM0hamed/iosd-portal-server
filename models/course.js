@@ -12,6 +12,11 @@ const CourseSchema = new Schema({
         type: String
     }],
 
+    instructorName: String,
+    instructorImage: String,
+    instructorJob: String,
+    instructorAbout: String,
+
     Instructor: [{
         type: Schema.Types.ObjectId,
         ref: 'Instructor',
