@@ -1,7 +1,8 @@
 const uploadController = {
     upload: (req, res, next) => {
+        console.log(req.file);
         res.json({
-            url: `http://localhost:5000/${req.file.path}`
+            url: req.file.location
         });
     }
 };
