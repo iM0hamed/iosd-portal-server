@@ -4,7 +4,7 @@ import Course from './../models/course';
 const courseController = {
 
 	fetchAll: (req, res) => {
-		Course.find().populate("Instructor").then(courses => {
+		Course.find().then(courses => {
 			res.json({
 				success: true,
 				message: "All Courses Found",
@@ -19,7 +19,7 @@ const courseController = {
 	},
 
 	fetchCourse: (req, res) => {
-		Course.findById(req.params.id).populate('Instructor').then(course => {
+		Course.findById(req.params.id).then(course => {
 			if(course) {
 				res.json({
 					success: true,
