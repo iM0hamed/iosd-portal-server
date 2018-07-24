@@ -25,7 +25,7 @@ Prefix - /api/v1/
     
     - DELETE /library/book/:id (admin)
     
-- Events
+- AdminEventsSummary
     - GET /events/
     - GET /events/recent/  (5 upcoming 5)
     
@@ -56,7 +56,7 @@ Prefix - /api/v1/
     - GET /profile/:id
     - POST /profile/update
     
-- Courses and Videos
+- AdminCoursesSummary and Videos
     - GET /courses
     - GET /course/:id/
     - POST /course/:id/  (Will not change videos...) (admin)

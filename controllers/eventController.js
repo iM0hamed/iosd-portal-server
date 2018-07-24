@@ -19,7 +19,7 @@ let eventController = {
         Event.find({start: {$gte: now}}).sort('start').limit(5).then(data => {
             res.json({
                 success: true,
-                message: "Events found",
+                message: "AdminEventsSummary found",
                 data: data
             });
         }, (err) => {

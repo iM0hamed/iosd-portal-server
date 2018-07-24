@@ -12,11 +12,6 @@ const CourseSchema = new Schema({
         type: String
     }],
 
-    instructorName: String,
-    instructorImage: String,
-    instructorJob: String,
-    instructorAbout: String,
-
     Instructor: {
         name: String,
         job : String,

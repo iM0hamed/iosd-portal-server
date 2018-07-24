@@ -7,13 +7,13 @@ const courseController = {
 		Course.find().then(courses => {
 			res.json({
 				success: true,
-				message: "All Courses Found",
+				message: "All AdminCoursesSummary Found",
 				courses: courses
 			});
 		}).catch(e => {
 			res.status(404).json({
 				success: false,
-				message: "Courses Not Found"
+				message: "AdminCoursesSummary Not Found"
 			});
 		})
 	},
