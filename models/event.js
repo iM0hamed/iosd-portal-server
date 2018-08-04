@@ -4,7 +4,7 @@ const eventScheme = new mongoose.Schema({
     college : String ,
     title: String,
     description: String,
-    date: Date,
+    date: String,
     image : String,
     link : String
 });

@@ -7,8 +7,8 @@ let router = express.Router();
 router.get("/courses", courseController.fetchAll);
 router.get("/course/:id", courseController.fetchCourse);
 
-router.post("/course/:id", admin, courseController.updateCourse);
 router.post("/courses/new", admin, courseController.newCourse);
-router.post("/courses/:id/videos", admin, courseController.updateVideo);
+router.post("/course/:id", admin, courseController.updateCourse);
+router.post("/course/:id/videos", admin, courseController.updateVideo);
 
 export default router;
